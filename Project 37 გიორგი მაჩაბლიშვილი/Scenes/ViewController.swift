@@ -88,36 +88,6 @@ class ViewController: UIViewController {
     @objc func newsInfoRefresh() {
         loadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//            let urlString = "https://jobicy.com/jobs-rss-feed?utm_source=apislist.com#section1"
-//            guard let url = URL(string: urlString) else {
-//                return
-//            }
-//            
-//            var request = URLRequest(url: url)
-//            request.httpMethod = "GET"
-//            
-//            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//                if let error = error {
-//                    print(error)
-//                }
-//                
-//                guard let data else {
-//                    return
-//                }
-//                
-//                do {
-//                    let info = try JSONDecoder().decode(JobsResponse.self, from: data)
-//                    DispatchQueue.main.async {
-//                        
-//                        self.jobManager.setJobInfo(info.jobs)
-//                        self.collectionView.reloadData()
-//                    }
-//                    
-//                } catch {
-//                    dump(error)
-//                }
-//            }
-//            task.resume()
             self.refreshControl.endRefreshing()
         }
     }
