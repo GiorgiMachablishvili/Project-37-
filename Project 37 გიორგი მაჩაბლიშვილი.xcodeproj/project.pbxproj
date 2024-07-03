@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E34756B62C352BA600A4117D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E34756B52C352BA600A4117D /* Kingfisher */; };
 		E35356202C34688000227B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E353561F2C34688000227B27 /* AppDelegate.swift */; };
 		E35356222C34688000227B27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35356212C34688000227B27 /* SceneDelegate.swift */; };
 		E35356242C34688000227B27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35356232C34688000227B27 /* ViewController.swift */; };
-		E35356272C34688000227B27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35356252C34688000227B27 /* Main.storyboard */; };
 		E35356292C34688200227B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35356282C34688200227B27 /* Assets.xcassets */; };
 		E353562C2C34688200227B27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E353562A2C34688200227B27 /* LaunchScreen.storyboard */; };
+		E353563C2C346A9500227B27 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E353563B2C346A9500227B27 /* CollectionViewCell.swift */; };
+		E353563E2C346ABC00227B27 /* JobInfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E353563D2C346ABC00227B27 /* JobInfoStruct.swift */; };
+		E35356412C3470A200227B27 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E35356402C3470A200227B27 /* SnapKit */; };
+		E35356432C3470A200227B27 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E35356422C3470A200227B27 /* SnapKit-Dynamic */; };
+		E38843062C351CC600F9F82F /* JobsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38843052C351CC600F9F82F /* JobsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +25,12 @@
 		E353561F2C34688000227B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35356212C34688000227B27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E35356232C34688000227B27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E35356262C34688000227B27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E35356282C34688200227B27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E353562B2C34688200227B27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E353562D2C34688200227B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E353563B2C346A9500227B27 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E353563D2C346ABC00227B27 /* JobInfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoStruct.swift; sourceTree = "<group>"; };
+		E38843052C351CC600F9F82F /* JobsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34756B62C352BA600A4117D /* Kingfisher in Frameworks */,
+				E35356412C3470A200227B27 /* SnapKit in Frameworks */,
+				E35356432C3470A200227B27 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +66,89 @@
 		E353561E2C34688000227B27 /* Project 37 გიორგი მაჩაბლიშვილი */ = {
 			isa = PBXGroup;
 			children = (
-				E353561F2C34688000227B27 /* AppDelegate.swift */,
-				E35356212C34688000227B27 /* SceneDelegate.swift */,
-				E35356232C34688000227B27 /* ViewController.swift */,
-				E35356252C34688000227B27 /* Main.storyboard */,
-				E35356282C34688200227B27 /* Assets.xcassets */,
-				E353562A2C34688200227B27 /* LaunchScreen.storyboard */,
+				E35356332C3468B200227B27 /* App */,
+				E35356342C3468E600227B27 /* Scenes */,
+				E35356352C34691F00227B27 /* Domain */,
+				E35356362C34692900227B27 /* Resources */,
 				E353562D2C34688200227B27 /* Info.plist */,
 			);
 			path = "Project 37 გიორგი მაჩაბლიშვილი";
+			sourceTree = "<group>";
+		};
+		E35356332C3468B200227B27 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E353561F2C34688000227B27 /* AppDelegate.swift */,
+				E35356212C34688000227B27 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E35356342C3468E600227B27 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E353563A2C346A6300227B27 /* Collection View Cell */,
+				E35356392C346A5800227B27 /* Main View */,
+				E35356232C34688000227B27 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E35356352C34691F00227B27 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E35356382C346A1100227B27 /* Job Struct */,
+				E38843072C351CCA00F9F82F /* JobsManager */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E35356362C34692900227B27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E35356372C34694D00227B27 /* Helper */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E35356372C34694D00227B27 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E353562A2C34688200227B27 /* LaunchScreen.storyboard */,
+				E35356282C34688200227B27 /* Assets.xcassets */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E35356382C346A1100227B27 /* Job Struct */ = {
+			isa = PBXGroup;
+			children = (
+				E353563D2C346ABC00227B27 /* JobInfoStruct.swift */,
+			);
+			path = "Job Struct";
+			sourceTree = "<group>";
+		};
+		E35356392C346A5800227B27 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Main View";
+			sourceTree = "<group>";
+		};
+		E353563A2C346A6300227B27 /* Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E353563B2C346A9500227B27 /* CollectionViewCell.swift */,
+			);
+			path = "Collection View Cell";
+			sourceTree = "<group>";
+		};
+		E38843072C351CCA00F9F82F /* JobsManager */ = {
+			isa = PBXGroup;
+			children = (
+				E38843052C351CC600F9F82F /* JobsManager.swift */,
+			);
+			path = JobsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +167,11 @@
 			dependencies = (
 			);
 			name = "Project 37 გიორგი მაჩაბლიშვილი";
+			packageProductDependencies = (
+				E35356402C3470A200227B27 /* SnapKit */,
+				E35356422C3470A200227B27 /* SnapKit-Dynamic */,
+				E34756B52C352BA600A4117D /* Kingfisher */,
+			);
 			productName = "Project 37 გიორგი მაჩაბლიშვილი";
 			productReference = E353561C2C34688000227B27 /* Project 37 გიორგი მაჩაბლიშვილი.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +200,10 @@
 				Base,
 			);
 			mainGroup = E35356132C34688000227B27;
+			packageReferences = (
+				E353563F2C3470A200227B27 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E34756B42C352BA600A4117D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E353561D2C34688000227B27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +220,6 @@
 			files = (
 				E353562C2C34688200227B27 /* LaunchScreen.storyboard in Resources */,
 				E35356292C34688200227B27 /* Assets.xcassets in Resources */,
-				E35356272C34688000227B27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,22 +231,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35356242C34688000227B27 /* ViewController.swift in Sources */,
+				E353563E2C346ABC00227B27 /* JobInfoStruct.swift in Sources */,
 				E35356202C34688000227B27 /* AppDelegate.swift in Sources */,
+				E353563C2C346A9500227B27 /* CollectionViewCell.swift in Sources */,
 				E35356222C34688000227B27 /* SceneDelegate.swift in Sources */,
+				E38843062C351CC600F9F82F /* JobsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E35356252C34688000227B27 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E35356262C34688000227B27 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E353562A2C34688200227B27 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +383,6 @@
 				INFOPLIST_FILE = "Project 37 გიორგი მაჩაბლიშვილი/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +409,6 @@
 				INFOPLIST_FILE = "Project 37 გიორგი მაჩაბლიშვილი/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,6 +446,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E34756B42C352BA600A4117D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+		E353563F2C3470A200227B27 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E34756B52C352BA600A4117D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E34756B42C352BA600A4117D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		E35356402C3470A200227B27 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E353563F2C3470A200227B27 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E35356422C3470A200227B27 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E353563F2C3470A200227B27 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E35356142C34688000227B27 /* Project object */;
 }
