@@ -47,36 +47,39 @@ class ViewController: UIViewController {
     }
     
     func loadData() {
-        let urlString = "https://jobicy.com/api/v2/remote-jobs"
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error)
-            }
-            
-            guard let data else {
+        jobManager.loadNotes()
+        if jobManager.getJobInfo().isEmpty {
+            let urlString = "https://jobicy.com/api/v2/remote-jobs"
+            guard let url = URL(string: urlString) else {
                 return
             }
             
-            do {
-                let info = try JSONDecoder().decode(JobsResponse.self, from: data)
-                DispatchQueue.main.async {
-                    
-                    self.jobManager.setJobInfo(info.jobs)
-                    self.collectionView.reloadData()
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print(error)
                 }
                 
-            } catch {
-                dump(error)
+                guard let data else {
+                    return
+                }
+                
+                do {
+                    let info = try JSONDecoder().decode(JobsResponse.self, from: data)
+                    DispatchQueue.main.async {
+                        self.jobManager.setJobInfo(info.jobs)
+                        self.jobManager.saveNotes()
+                        self.collectionView.reloadData()
+                    }
+                    
+                } catch {
+                    dump(error)
+                }
             }
+            task.resume()
         }
-        task.resume()
     }
     
     func refreshNews() {
@@ -86,6 +89,9 @@ class ViewController: UIViewController {
     }
     
     @objc func newsInfoRefresh() {
+        jobManager.emptyJobInfo()
+        jobManager.saveNotes()
+        self.collectionView.reloadData()
         loadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.refreshControl.endRefreshing()

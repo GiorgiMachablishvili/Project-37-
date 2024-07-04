@@ -10,6 +10,10 @@ import UIKit
 class JobsManager {
     private var jobInfo: [Job] = []
     
+    func emptyJobInfo() {
+        jobInfo = []
+    }
+    
     //Append new note
     func appendNewNote(note: Job) {
         jobInfo.append(note)
